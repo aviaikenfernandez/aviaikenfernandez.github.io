@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avi Aiken Fernandez — Attorney, Legal Scholar & Author</title>
+  <title>Avi Aiken Fernandez</title>
   <style>
     /* RESET & BASE TYPOGRAPHY */
     * {
@@ -105,11 +105,18 @@
       background-color: #111111;
     }
 
-    /* HERO SECTION (HEADSHOT + TRUNCATED BIO) */
+    /* HERO & ABOUT LAYOUT (HEADSHOT + BIO) */
     .hero-section {
-      padding: 48px 0 40px;
-      border-bottom: 1px solid #f0f0f0;
-      margin-bottom: 40px;
+      padding: 40px 0 20px;
+    }
+
+    .about-page-title {
+      display: none;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
     }
 
     .hero-container {
@@ -139,32 +146,26 @@
     }
 
     .bio-text p {
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .bio-text p:last-child {
       margin-bottom: 0;
     }
 
-    /* ABOUT TAB SPECIFIC EXTENDED BIO */
-    .extended-about-content {
-      display: none;
-      margin-top: 24px;
-      padding-top: 24px;
-      border-top: 1px solid #f0f0f0;
-      font-size: 1rem;
-      color: #333333;
-      line-height: 1.7;
-    }
-
-    .extended-about-content h3 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin: 24px 0 12px;
-      color: #111111;
-    }
-
     /* SECTION HEADERS & PORTFOLIO ITEMS */
+    .portfolio-section-wrapper {
+      border-top: 1px solid #f0f0f0;
+      padding-top: 36px;
+      margin-top: 20px;
+    }
+
+    .portfolio-section-wrapper.no-border {
+      border-top: none;
+      padding-top: 20px;
+      margin-top: 0;
+    }
+
     .section-header {
       margin-bottom: 28px;
     }
@@ -266,7 +267,12 @@
       }
 
       .hero-section {
-        padding: 32px 0 28px;
+        padding: 28px 0 10px;
+      }
+
+      .about-page-title {
+        margin-bottom: 20px;
+        font-size: 1.5rem;
       }
 
       .hero-container {
@@ -293,9 +299,9 @@
   <!-- NAVIGATION HEADER -->
   <header class="site-header">
     <div class="container nav-container">
-      <a href="#home" class="site-title" onclick="switchTab('home', event)">Avi Aiken Fernandez</a>
+      <a href="/" class="site-title" onclick="switchTab('home', event)">Avi Aiken Fernandez</a>
       <nav class="nav-links">
-        <a href="#home" class="nav-tab active" data-tab="home" onclick="switchTab('home', event)">Home</a>
+        <a href="/" class="nav-tab active" data-tab="home" onclick="switchTab('home', event)">Home</a>
         <a href="#about" class="nav-tab" data-tab="about" onclick="switchTab('about', event)">About</a>
         <a href="#contributions" class="nav-tab" data-tab="contributions" onclick="switchTab('contributions', event)">Contributions</a>
         <a href="#podcasts-videos" class="nav-tab" data-tab="podcasts-videos" onclick="switchTab('podcasts-videos', event)">Podcasts/Videos</a>
@@ -307,8 +313,11 @@
   <!-- MAIN CONTENT CONTAINER -->
   <main class="container">
     
-    <!-- HERO / BIO SECTION -->
+    <!-- HERO / ABOUT SECTION -->
     <section id="hero-section" class="hero-section">
+      <!-- DEDICATED HEADING FOR ABOUT TAB -->
+      <h1 id="about-page-title" class="about-page-title">About Avi</h1>
+
       <div class="hero-container">
         <div class="profile-photo">
           <img 
@@ -319,19 +328,25 @@
             onerror="this.src='https://placehold.co/240x239/e2e8f0/1e293b?text=Avi+Aiken+Fernandez'"
           >
         </div>
-        <div class="bio-text">
-          <p id="main-bio-paragraph">
-            I'm Avi Aiken Fernandez, an attorney, legal scholar, and author focusing on technology governance, trial advocacy, and risk analysis within legal and institutional frameworks. My work focuses on developing AI risk frameworks anchored in established cybersecurity and legal principles—notably <b>the 3C’s of GenAI™ for Legal</b> framework—and furthering public policy concerns across regulated industries. I am the author of <i>The Retaker's Advantage: The 5-Step Blueprint for Passing the Bar on Your Next Attempt</i> (Aiken House Publishing and Barnes & Noble Press, 2026) and <i>Teo's Truck / El camión de Teo</i> (Bili Bilingual Books, 2026). You can read my ongoing policy analysis at my <a href="https://aviaikenfernandez.substack.com" target="_blank" rel="noopener">Substack</a>.
-          </p>
 
-          <!-- EXTENDED CONTENT SHOWN ONLY ON 'ABOUT' TAB -->
-          <div id="extended-about-content" class="extended-about-content">
-            <h3>Scholarship & Institutional Risk Advisory</h3>
+        <div class="bio-text">
+          <!-- HOME TAB TRUNCATED SUMMARY BIO -->
+          <div id="home-bio">
             <p>
-              Avi's research centers on translating enterprise risk governance models (such as the NIST AI Risk Management Framework and ISO standards) into operational guidelines for legal practice, institutional compliance, and judicial administration.
+              I'm Avi Aiken Fernandez, an attorney, legal scholar, and author focusing on technology governance, trial advocacy, and risk analysis within legal and institutional frameworks. My work focuses on developing AI risk frameworks anchored in established cybersecurity and legal principles—notably <b>the 3C’s of GenAI™ for Legal</b> framework—and furthering public policy concerns across regulated industries. I am the author of <i>The Retaker's Advantage: The 5-Step Blueprint for Passing the Bar on Your Next Attempt</i> (Aiken House Publishing and Barnes & Noble Press, 2026) and <i>Teo's Truck / El camión de Teo</i> (Bili Bilingual Books, 2026). You can read my ongoing policy analysis at my <a href="https://aviaikenfernandez.substack.com" target="_blank" rel="noopener">Substack</a>.
+            </p>
+          </div>
+
+          <!-- ABOUT TAB MULTI-PARAGRAPH THIRD-PERSON EXPANDED BIO -->
+          <div id="about-bio" style="display: none;">
+            <p>
+              Avi Aiken Fernández is an attorney, legal scholar, and author focusing on technology governance, trial advocacy, and risk analysis within legal and institutional frameworks. Her work focuses on developing AI risk frameworks anchored in established cybersecurity and legal principles—notably <b>the 3C’s of GenAI™ for Legal</b> framework—and furthering public policy concerns across regulated industries. She is the author of <i>The Retaker's Advantage: The 5-Step Blueprint for Passing the Bar on Your Next Attempt</i> (Aiken House Publishing and Barnes & Noble Press, 2026) and <i>Teo's Truck / El camión de Teo</i> (Bili Bilingual Books, 2026).
+            </p>
+            <p> 
+              In 2018 Avi lived and conducted research in Japan, analyzing Japanese text and conducting an on-site visit leading to her white paper, <i>A Closer Look at Fuchu Prison: Does Japan’s “Super-Max” Measure Up to International Human Rights Standards?</i> After returning from Japan, Avi graduated from Temple University School of Law with a J.D. and Certificate in Trial Advocacy and Litigation.
             </p>
             <p>
-              As an advocate and educator, he regularly delivers Keynote Continuing Legal Education (CLE) seminars on evidentiary foundations for algorithmic evidence, artificial intelligence ethics under modified Rules of Professional Conduct, and risk mitigation in high-stakes trial practice.
+Her policy writing has been published by <i>The Riverdale Press</i>. Her research has been indexed on Google Scholar, and her framework for integrating generative artificial intelligence is accredited across multiple states for continuing legal education credit. She has lived on three continents, and solo-traveled to over a dozen countries. Avi speaks Spanish, French, and Japanese.
             </p>
           </div>
         </div>
@@ -339,7 +354,7 @@
     </section>
 
     <!-- DYNAMIC FILTERABLE PORTFOLIO ITEMS -->
-    <section id="portfolio-section">
+    <section id="portfolio-section" class="portfolio-section-wrapper">
       <div class="section-header">
         <h2 id="section-heading-title">Selected Work</h2>
       </div>
@@ -349,13 +364,13 @@
         <!-- ITEM 1: CONTRIBUTIONS (RESEARCH) -->
         <article class="portfolio-item" data-category="contributions" data-featured="true">
           <div class="item-meta">
-            <span class="item-category-tag">Research & Governance</span> • <span>October 2026</span>
+            <span class="item-category-tag">Research & Governance</span> • <span>February 2026</span>
           </div>
-          <h3 class="item-title">The 3C’s of GenAI™ for Legal: A Risk Management Framework</h3>
+          <h3 class="item-title">The 3C’s of GenAI™ for Legal: A Generative Artificial Intelligence Risk Management Framework</h3>
           <p class="item-description">
-            An institutional model translating core NIST AI Risk Management Framework and ISO principles into actionable compliance protocols for law firms, legal departments, and judicial bodies utilizing enterprise generative AI solutions.
+            An institutional model translating core cybersecurity and data privacy principles into actionable compliance protocols for law firms, legal departments, and judicial bodies utilizing generative artificial intelligence solutions.
           </p>
-          <a href="#" class="item-link">Download Paper (PDF) →</a>
+          <a href="#" class="item-link">Learn More →https://youtu.be/ubIuSegUVds?si=NRVaackpik9FquxO</a>
         </article>
 
         <!-- ITEM 2: BOOKS -->
@@ -383,267 +398,16 @@
         </article>
 
         <!-- ITEM 4: CONTRIBUTIONS (LAW REVIEW) -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contributions — Avi Aiken Fernández</title>
-  <style>
-    /* RESET & BASE STYLES */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: "Times New Roman", Times, Georgia, serif;
-      background-color: #ffffff;
-      color: #111111;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      padding: 40px 20px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    /* HEADER */
-    header {
-      border-bottom: 2px solid #111111;
-      padding-bottom: 20px;
-      margin-bottom: 40px;
-    }
-
-    h1.author-name {
-      font-size: 2.25rem;
-      font-weight: normal;
-      letter-spacing: -0.01em;
-      margin-bottom: 6px;
-    }
-
-    .page-title {
-      font-size: 1.25rem;
-      font-style: italic;
-      color: #444444;
-    }
-
-    /* SECTIONS */
-    .category-section {
-      margin-bottom: 48px;
-    }
-
-    .category-heading {
-      font-size: 1.35rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-bottom: 1px solid #cccccc;
-      padding-bottom: 8px;
-      margin-bottom: 24px;
-    }
-
-    /* CONTRIBUTION ITEMS */
-    .item-list {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .contribution-item {
-      padding-bottom: 20px;
-      border-bottom: 1px dashed #e0e0e0;
-    }
-
-    .contribution-item:last-child {
-      border-bottom: none;
-    }
-
-    .item-title {
-      font-size: 1.15rem;
-      font-weight: bold;
-      line-height: 1.4;
-      margin-bottom: 6px;
-    }
-
-    .item-title a {
-      color: #002244;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .item-title a:hover {
-      color: #0055aa;
-    }
-
-    .item-meta {
-      font-size: 0.95rem;
-      color: #555555;
-      font-style: italic;
-      margin-bottom: 8px;
-    }
-
-    .item-description {
-      font-size: 1rem;
-      color: #222222;
-      line-height: 1.5;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid #111111;
-      padding-top: 20px;
-      margin-top: 60px;
-      font-size: 0.9rem;
-      color: #666666;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    footer a {
-      color: #111111;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 24px 16px;
-      }
-
-      h1.author-name {
-        font-size: 1.75rem;
-      }
-
-      .category-heading {
-        font-size: 1.15rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    
-    <!-- HEADER -->
-    <header>
-      <h1 class="author-name">Avi Aiken Fernández</h1>
-      <div class="page-title">Contributions, Scholarly Works & Public Policy Papers</div>
-    </header>
-
-    <main>
-
-      <!-- SECTION 1: SCHOLARLY ARTICLES & LEGAL RESEARCH -->
-      <section class="category-section">
-        <h2 class="category-heading">Scholarly Articles & Legal Research</h2>
-        <div class="item-list">
-
-          <article class="contribution-item">
-            <h3 class="item-title">
-              <a href="https://www.researchgate.net/publication/383154103_A_Closer_Look_at_Fuchu_Prison_Does_Japan's_Super-Max_Measure_up_to_International_Human_Rights_Standards" target="_blank" rel="noopener">
-                A Closer Look at Fuchu Prison: Does Japan’s “Super-Max” Measure up to International Human Rights Standards?
-              </a>
-            </h3>
-            <div class="item-meta">ResearchGate • 2018</div>
-            <p class="item-description">
-              An architectural and human rights analysis examining conditions, solitary confinement protocols, and international treaty compliance at Japan's premier maximum-security facility.
-            </p>
-          </article>
-
-          <article class="contribution-item">
-            <h3 class="item-title">
-              <a href="https://www.researchgate.net/publication/383121822_After_Al-Aulaqi_Can_weaponized_drones_target_US_citizens_domestically" target="_blank" rel="noopener">
-                After Al-Aulaqi: Can weaponized drones target U.S. citizens domestically?
-              </a>
-            </h3>
-            <div class="item-meta">ResearchGate • Legal Analysis</div>
-            <p class="item-description">
-              An inquiry into Fifth Amendment Due Process guarantees, executive targeted-killing frameworks, and the constitutional limits of domestic uncrewed aerial vehicle operations.
-            </p>
-          </article>
-
-          <article class="contribution-item">
-            <h3 class="item-title">
-              <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xVbAMvoAAAAJ&citation_for_view=xVbAMvoAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener">
-                The Warlord Presidency: In an era of expanding executive power, does Congress still hold the power to declare war?
-              </a>
-            </h3>
-            <div class="item-meta">Google Scholar • Constitutional Law</div>
-            <p class="item-description">
-              Examining Article I War Powers, the War Powers Resolution of 1973, and the erosion of legislative oversight in contemporary military engagements.
-            </p>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- SECTION 2: PUBLIC COMMENTS & REGULATORY FILINGS -->
-      <section class="category-section">
-        <h2 class="category-heading">Public Comments & Regulatory Filings</h2>
-        <div class="item-list">
-
-          <article class="contribution-item">
-            <h3 class="item-title">
-              <a href="https://www.regulations.gov/comment/FMCSA-2026-0826-0495" target="_blank" rel="noopener">
-                Public Comment on Federal Commercial Motor Carrier Safety Standards
-              </a>
-            </h3>
-            <div class="item-meta">Regulations.gov • Federal Motor Carrier Safety Administration (FMCSA) • September 9, 2026</div>
-            <p class="item-description">
-              Formal administrative feedback addressing automated driving systems, safety compliance metrics, and regulatory oversight in commercial transportation infrastructure.
-            </p>
-          </article>
-
-          <article class="contribution-item">
-            <h3 class="item-title">
-              <a href="https://www.regulations.gov/comment/FAA-2025-0638-0439" target="_blank" rel="noopener">
-                Public Comment on Federal Aviation Regulatory Frameworks
-              </a>
-            </h3>
-            <div class="item-meta">Regulations.gov • Federal Aviation Administration (FAA) • May 30, 2025</div>
-            <p class="item-description">
-              Regulatory submission evaluating safety protocols, airworthiness directives, and technology integration standards within national airspace systems.
-            </p>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- SECTION 3: MEDIA & JOURNALISM -->
-      <section class="category-section">
-        <h2 class="category-heading">Media & Public Commentary</h2>
-        <div class="item-list">
-
-          <article class="contribution-item">
-            <h3 class="item-title">
-              <a href="https://www.riverdalepress.com/stories/concerns-over-kappock-street-post-office,233862" target="_blank" rel="noopener">
-                Concerns over Kappock Street post office
-              </a>
-            </h3>
-            <div class="item-meta">The Riverdale Press • Local Reporting & Commentary</div>
-            <p class="item-description">
-              Investigative coverage on postal service reliability, community infrastructure integrity, and local administrative accountability.
-            </p>
-          </article>
-
-        </div>
-      </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-      <div>© 2026 Avi Aiken Fernández</div>
-      <div><a href="https://aviaikenfernandez.github.io">aviaikenfernandez.github.io</a></div>
-    </footer>
-
-  </div>
-
-</body>
-</html>
+        <article class="portfolio-item" data-category="contributions" data-featured="false">
+          <div class="item-meta">
+            <span class="item-category-tag">Scholarly Paper</span> • <span>Forthcoming Law Review</span>
+          </div>
+          <h3 class="item-title">Algorithmic Risk Allocation in High-Stakes Litigation</h3>
+          <p class="item-description">
+            Analyzing the intersection of institutional duty of care and automated legal research tools, proposing explicit disclosure standards for legal malpractice avoidance.
+          </p>
+          <a href="#" class="item-link">Read Abstract →</a>
+        </article>
 
         <!-- ITEM 5: BOOKS -->
         <article class="portfolio-item" data-category="books" data-featured="false">
@@ -685,20 +449,19 @@
 
   <!-- JAVASCRIPT TAB FILTERING LOGIC -->
   <script>
-    /*
-     * Matt-Style Single Page View Controller
-     * Handles tab switching, dynamic visibility updates, and URL hash management.
-     */
     function switchTab(tabName, event) {
       if (event) {
         event.preventDefault();
       }
 
-      // Update URL Hash cleanly without reloading
-      if (history.pushState) {
-        history.pushState(null, null, tabName === 'home' ? ' ' : '#' + tabName);
+      // Update URL cleanly: 'home' returns cleanly to domain root URL without trailing hash/text
+      if (window.history && window.history.pushState) {
+        const cleanURL = (tabName === 'home') 
+          ? window.location.pathname 
+          : '#' + tabName;
+        window.history.pushState(null, null, cleanURL);
       } else {
-        location.hash = tabName === 'home' ? '' : '#' + tabName;
+        window.location.hash = (tabName === 'home') ? '' : tabName;
       }
 
       applyFilter(tabName);
@@ -706,13 +469,15 @@
 
     function applyFilter(tabName) {
       const heroSection = document.getElementById('hero-section');
-      const extendedAbout = document.getElementById('extended-about-content');
+      const aboutTitle = document.getElementById('about-page-title');
+      const homeBio = document.getElementById('home-bio');
+      const aboutBio = document.getElementById('about-bio');
       const sectionHeading = document.getElementById('section-heading-title');
       const portfolioSection = document.getElementById('portfolio-section');
       const items = document.querySelectorAll('.portfolio-item');
       const navTabs = document.querySelectorAll('.nav-tab');
 
-      // Update Active Nav Link Style
+      // Update Active Nav Tab Indicator
       navTabs.forEach(tab => {
         if (tab.getAttribute('data-tab') === tabName) {
           tab.classList.add('active');
@@ -721,19 +486,21 @@
         }
       });
 
-      // Map display title for categories
       const categoryTitles = {
         'contributions': 'Contributions',
         'podcasts-videos': 'Podcasts & Videos',
         'books': 'Books'
       };
 
-      // TAB VIEW ROUTING LOGIC
       if (tabName === 'home') {
-        // HOME TAB: Show Truncated Hero + Selected Work across categories
+        // HOME TAB: Show hero with truncated bio + Selected Work
         heroSection.style.display = 'block';
-        extendedAbout.style.display = 'none';
+        aboutTitle.style.display = 'none';
+        homeBio.style.display = 'block';
+        aboutBio.style.display = 'none';
+        
         portfolioSection.style.display = 'block';
+        portfolioSection.classList.remove('no-border');
         sectionHeading.textContent = 'Selected Work';
 
         items.forEach(item => {
@@ -745,17 +512,24 @@
         });
 
       } else if (tabName === 'about') {
-        // ABOUT TAB: Show Hero + Extended Bio Details (Hide Portfolio Grid)
+        // ABOUT TAB: Show "About Avi" title + full bio (Hide portfolio section entirely)
         heroSection.style.display = 'block';
-        extendedAbout.style.display = 'block';
+        aboutTitle.style.display = 'block';
+        homeBio.style.display = 'none';
+        aboutBio.style.display = 'block';
+        
         portfolioSection.style.display = 'none';
 
       } else {
         // CATEGORY TABS (Contributions, Podcasts/Videos, Books):
-        // Hide Hero Section, Show targeted category items
+        // Hide top photo/bio section completely and show matching work items cleanly
         heroSection.style.display = 'none';
-        extendedAbout.style.display = 'none';
+        aboutTitle.style.display = 'none';
+        homeBio.style.display = 'none';
+        aboutBio.style.display = 'none';
+        
         portfolioSection.style.display = 'block';
+        portfolioSection.classList.add('no-border');
         sectionHeading.textContent = categoryTitles[tabName] || tabName;
 
         items.forEach(item => {
@@ -767,11 +541,10 @@
         });
       }
 
-      // Smooth scroll back to top of main section
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Read Hash from URL on Page Load
+    // Initialize state on page load based on clean URL or hash
     window.addEventListener('DOMContentLoaded', () => {
       document.getElementById('current-year').textContent = new Date().getFullYear();
 
@@ -785,7 +558,7 @@
       }
     });
 
-    // Handle Browser Back/Forward navigation
+    // Handle Browser History Navigation (Back / Forward buttons)
     window.addEventListener('popstate', () => {
       const currentHash = window.location.hash.replace('#', '').toLowerCase();
       const validTabs = ['home', 'about', 'contributions', 'podcasts-videos', 'books'];
