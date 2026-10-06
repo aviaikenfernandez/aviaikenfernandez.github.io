@@ -1,1 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avi Aiken Fernandez — Attorney, Legal Scholar & Author</title>
+  <style>
+    /* RESET & BASE STYLES */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      color: #222222;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      transition: color 0.15s ease-in-out;
+    }
+
+    a:hover {
+      color: #004499;
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* HEADER & NAVIGATION */
+    .site-header {
+      width: 100%;
+      border-bottom: 1px solid #eaeaea;
+      padding: 24px 0;
+      background-color: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #111111;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .site-title:hover {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-tab {
+      font-size: 0.875rem; /* 14px */
+      font-weight: 400;     /* Non-bold */
+      color: #555555;
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.15s ease-in-out;
+    }
+
+    .nav-tab:hover {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .nav-tab.active {
+      color: #000000;
+      font-weight: 500;
+    }
+
+    .nav-tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: -24px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #111111;
+    }
+
+    /* HERO SECTION (HEADSHOT + BIO) */
+    .hero-section {
+      padding: 48px 0;
+      border-bottom: 1px solid #f0f0f0;
+      margin-bottom: 40px;
+    }
+
+    .hero-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    .profile-photo {
+      flex-shrink: 0;
+    }
+
+    .profile-photo img {
+      width: 240px;
+      height: 239px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+      background-color: #f5f5f5;
+    }
+
+    .bio-text {
+      flex: 1;
+      font-size: 1.025rem;
+      color: #333333;
+      line-height: 1.65;
+    }
+
+    .bio-text p {
+      margin-bottom: 16px;
+    }
+
+    .bio-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* CONTENT SECTIONS & ITEMS */
+    .section-header {
+      margin-bottom: 24px;
+    }
+
+    .section-header h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111111;
+      text-transform: capitalize;
+      letter-spacing: -0.01em;
+    }
+
+    .portfolio-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .portfolio-item {
+      padding-bottom: 24px;
+      border-bottom: 1px solid #f4f4f4;
+      transition: opacity 0.2s ease;
+    }
+
+    .portfolio-item:last-child {
+      border-bottom: none;
+    }
+
+    .item-meta {
+      font-size: 0.8125rem;
+      color: #777777;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .item-category-tag {
+      font-weight: 600;
+      color: #444444;
+    }
+
+    .item-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #111111;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .item-description {
+      font-size: 0.95rem;
+      color: #555555;
+      line-height: 1.55;
+    }
+
+    .item-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      border-top: 1px solid #eaeaea;
+      padding: 32px 0;
+      margin-top: 60px;
+      font-size: 0.85rem;
+      color: #777777;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* RESPONSIVE MOBILE STYLES */
+    @media (max-width: 768px) {
+      .site-header {
+        position: relative;
+        padding: 16px 0;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .nav-tab.active::after {
+        display: none; /* Turn off underline on mobile wrap */
+      }
+
+      .hero-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .profile-photo img {
+        width: 100%;
+        max-width: 240px;
+        height: auto;
+        aspect-ratio: 240 / 239;
+      }
+
+      .site-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="site-title" onclick="switchTab('home', event)">Avi Aiken Fernandez</a>
+      <nav class="nav-links">
+        <a href="#home" class="nav-tab active" data-tab="home" onclick="switchTab('home', event)">Home</a>
+        <a href="#about" class="nav-tab" data-tab="about" onclick="switchTab('about', event)">About</a>
+        <a href="#research" class="nav-tab" data-tab="research" onclick="switchTab('research', event)">Research</a>
+        <a href="#speaking" class="nav-tab" data-tab="speaking" onclick="switchTab('speaking', event)">Speaking</a>
+        <a href="#books" class="nav-tab" data-tab="books" onclick="switchTab('books', event)">Books</a>
+        <a href="#podcast" class="nav-tab" data-tab="podcast" onclick="switchTab('podcast', event)">Podcast</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="container">
+    
+    <!-- HERO / ABOUT SECTION -->
+    <section id="hero-section" class="hero-section">
+      <div class="hero-container">
+        <div class="profile-photo">
+          <img 
+            src="https://github.com/user-attachments/assets/e09d5597-4c0e-46a8-9a8d-e9c8b17e23bc" 
+            alt="Avi Aiken Fernandez" 
+            width="240" 
+            height="239"
+            onerror="this.src='https://placehold.co/240x239/e2e8f0/1e293b?text=Avi+Aiken+Fernandez'"
+          >
+        </div>
+        <div class="bio-text">
+          <p>
+            I'm Avi Aiken Fernandez, an attorney, legal scholar, and author focusing on technology governance, trial advocacy, and risk analysis within legal and institutional frameworks. My work focuses on developing AI risk frameworks anchored in established cybersecurity and legal principles—notably <b>the 3C’s of GenAI™ for Legal</b> framework—and furthering public policy concerns across regulated industries.
+          </p>
+          <p>
+            I am the author of <i>The Retaker's Advantage: The 5-Step Blueprint for Passing the Bar on Your Next Attempt</i> (Aiken House Publishing and Barnes & Noble Press, 2026) and <i>Teo's Truck / El camión de Teo</i> (Bili Bilingual Books, 2026). You can read my ongoing policy analysis at my <a href="https://aviaikenfernandez.substack.com" target="_blank" rel="noopener">Substack</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DYNAMIC FILTERABLE PORTFOLIO ITEMS -->
+    <section id="portfolio-section">
+      <div class="section-header">
+        <h2 id="section-heading-title">Featured Work</h2>
+      </div>
+
+      <div class="portfolio-grid" id="portfolio-grid">
+        
+        <!-- ITEM 1: RESEARCH -->
+        <article class="portfolio-item" data-category="research" data-featured="true">
+          <div class="item-meta">
+            <span class="item-category-tag">Research</span> • <span>October 2026</span>
+          </div>
+          <h3 class="item-title">The 3C’s of GenAI™ for Legal: A Risk Management Framework</h3>
+          <p class="item-description">
+            An institutional model translating core NIST AI Risk Management Framework and ISO principles into actionable compliance protocols for law firms, legal departments, and judicial bodies utilizing enterprise generative AI solutions.
+          </p>
+          <a href="#" class="item-link">Download Paper (PDF) →</a>
+        </article>
+
+        <!-- ITEM 2: BOOKS -->
+        <article class="portfolio-item" data-category="books" data-featured="true">
+          <div class="item-meta">
+            <span class="item-category-tag">Books</span> • <span>Aiken House Publishing (2026)</span>
+          </div>
+          <h3 class="item-title">The Retaker's Advantage: The 5-Step Blueprint for Passing the Bar on Your Next Attempt</h3>
+          <p class="item-description">
+            A strategic handbook engineered for repeat bar examinees, combining cognitive retrain methodologies, analytical legal writing systems, and targeted practice disciplines for state and Uniform Bar Examinations.
+          </p>
+          <a href="#" class="item-link">View Publication Details →</a>
+        </article>
+
+        <!-- ITEM 3: SPEAKING -->
+        <article class="portfolio-item" data-category="speaking" data-featured="true">
+          <div class="item-meta">
+            <span class="item-category-tag">Speaking</span> • <span>Keynote CLE Presentation</span>
+          </div>
+          <h3 class="item-title">Trial Advocacy in the Age of Generative AI: Evidentiary & Ethical Frontiers</h3>
+          <p class="item-description">
+            A comprehensive continuing legal education session exploring evidentiary foundation requirements for AI-assisted exhibits, client confidentiality risks, and judicial standards under amended Rules of Evidence.
+          </p>
+          <a href="#" class="item-link">Request Deck / Event Details →</a>
+        </article>
+
+        <!-- ITEM 4: RESEARCH -->
+        <article class="portfolio-item" data-category="research" data-featured="false">
+          <div class="item-meta">
+            <span class="item-category-tag">Research</span> • <span>Forthcoming Law Review</span>
+          </div>
+          <h3 class="item-title">Algorithmic Risk Allocation in High-Stakes Litigation</h3>
+          <p class="item-description">
+            Analyzing the intersection of institutional duty of care and automated legal research tools, proposing explicit disclosure standards for legal malpractice avoidance.
+          </p>
+          <a href="#" class="item-link">Read Abstract →</a>
+        </article>
+
+        <!-- ITEM 5: BOOKS -->
+        <article class="portfolio-item" data-category="books" data-featured="false">
+          <div class="item-meta">
+            <span class="item-category-tag">Books</span> • <span>Bili Bilingual Books (2026)</span>
+          </div>
+          <h3 class="item-title">Teo's Truck / El camión de Teo</h3>
+          <p class="item-description">
+            A dual-language children's publication designed to facilitate early language acquisition, cultural literacy, and foundational vocabulary development for young readers.
+          </p>
+          <a href="#" class="item-link">Learn More →</a>
+        </article>
+
+        <!-- ITEM 6: PODCAST -->
+        <article class="portfolio-item" data-category="podcast" data-featured="true">
+          <div class="item-meta">
+            <span class="item-category-tag">Podcast</span> • <span>Common Sense Policy Substack</span>
+          </div>
+          <h3 class="item-title">Common Sense Policy Analysis & Audio Dispatch</h3>
+          <p class="item-description">
+            Bi-weekly commentary analyzing regulatory developments, statutory AI governance bills, and public policy trends affecting legal ethics and tech infrastructure.
+          </p>
+          <a href="https://aviaikenfernandez.substack.com" target="_blank" rel="noopener" class="item-link">Listen & Subscribe on Substack →</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div>© <span id="current-year">2026</span> Avi Aiken Fernandez. All rights reserved.</div>
+      <div>
+        <a href="https://aviaikenfernandez.substack.com" target="_blank" rel="noopener">Substack</a> • 
+        <a href="https://github.com/aviaikenfernandez" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- DYNAMIC TAB FILTERING SCRIPT -->
+  <script>
+    /* 
+     * Dynamic Single-Page Filtering Engine
+     * Handles tab switching, hash updating, and item filtering without page refreshes.
+     */
+    function switchTab(tabName, event) {
+      if (event) {
+        event.preventDefault();
+      }
+
+      // Update URL Hash without triggering full browser reload
+      if (history.pushState) {
+        history.pushState(null, null, tabName === 'home' ? ' ' : '#' + tabName);
+      } else {
+        location.hash = tabName === 'home' ? '' : '#' + tabName;
+      }
+
+      // Apply Filter State
+      applyFilter(tabName);
+    }
+
+    function applyFilter(tabName) {
+      const heroSection = document.getElementById('hero-section');
+      const sectionHeading = document.getElementById('section-heading-title');
+      const items = document.querySelectorAll('.portfolio-item');
+      const navTabs = document.querySelectorAll('.nav-tab');
+
+      // Update Active Navigation Tab Styling
+      navTabs.forEach(tab => {
+        if (tab.getAttribute('data-tab') === tabName) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+
+      // Filter Logic
+      if (tabName === 'home') {
+        // HOME TAB: Show Hero section + Featured items across categories
+        heroSection.style.display = 'block';
+        sectionHeading.textContent = 'Featured Work';
+
+        items.forEach(item => {
+          if (item.getAttribute('data-featured') === 'true') {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+      } else if (tabName === 'about') {
+        // ABOUT TAB: Show ONLY Hero section
+        heroSection.style.display = 'block';
+        sectionHeading.textContent = '';
+
+        items.forEach(item => {
+          item.style.display = 'none';
+        });
+
+      } else {
+        // CATEGORY TABS (Research, Speaking, Books, Podcast): Hide Hero section, show matching category items
+        heroSection.style.display = 'none';
+        sectionHeading.textContent = tabName;
+
+        items.forEach(item => {
+          if (item.getAttribute('data-category') === tabName) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
+
+      // Smooth scroll to top of main section
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Initialize State based on URL Hash on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      // Set current copyright year
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // Read Hash from URL
+      const initialHash = window.location.hash.replace('#', '').toLowerCase();
+      const validTabs = ['home', 'about', 'research', 'speaking', 'books', 'podcast'];
+
+      if (validTabs.includes(initialHash)) {
+        applyFilter(initialHash);
+      } else {
+        applyFilter('home');
+      }
+    });
+
+    // Handle Browser Back/Forward navigation buttons
+    window.addEventListener('popstate', () => {
+      const currentHash = window.location.hash.replace('#', '').toLowerCase();
+      const validTabs = ['home', 'about', 'research', 'speaking', 'books', 'podcast'];
+      
+      if (validTabs.includes(currentHash)) {
+        applyFilter(currentHash);
+      } else {
+        applyFilter('home');
+      }
+    });
+  </script>
+</body>
+</html>
