@@ -57,6 +57,21 @@
       letter-spacing: 0.03em;
       text-transform: uppercase;
     }
+    .hero-image-container {
+      margin: 28px 0 32px 0;
+    }
+    .hero-image-container img {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+      display: block;
+      border-radius: 2px;
+    }
+    .image-caption {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
     article p {
       font-size: 1rem;
       margin-bottom: 20px;
@@ -96,7 +111,7 @@
     }
   </style>
 
-  <!-- Structured Data: NewsArticle Schema -->
+  <!-- Structured Data: NewsArticle & ImageObject Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -105,6 +120,9 @@
     "datePublished": "2026-11-06T00:00:00-05:00",
     "dateModified": "2026-11-06T00:00:00-05:00",
     "description": "Official press announcement regarding Avi Aiken Fernandez advancing to the Top 5 stage in Colossal's Top Host search featuring Ryan Seacrest and iHeartRadio.",
+    "image": [
+      "https://aviaikenfernandez.github.io/assets/avi-aiken-fernandez-headshot.jpg"
+    ],
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://aviaikenfernandez.github.io/press/colossal-top-5-announcement"
@@ -130,6 +148,12 @@
       <h1>Avi Aiken Fernandez Advances to Top 5 in Colossal's National Top Host Competition Featuring Ryan Seacrest and iHeartRadio</h1>
       <div class="meta-line">Official Press Announcement &nbsp;|&nbsp; November 6, 2026</div>
     </header>
+
+    <!-- APPROVED PRESS HEADSHOT -->
+    <div class="hero-image-container">
+      <img src="/assets/avi-aiken-fernandez-headshot.jpg" alt="Avi Aiken Fernandez official press headshot">
+      <div class="image-caption">Avi Aiken Fernandez — Top 5 Finalist, Colossal Top Host Competition.</div>
+    </div>
 
     <article>
       <p><span class="dateline">NEW YORK, NY — November 6, 2026</span> — Attorney, policy strategist, and host Avi Aiken Fernandez has officially advanced as a Top 5 Finalist in Colossal's nationwide <em>Top Host</em> search competition, presented in partnership with Ryan Seacrest and iHeartRadio benefiting the Ryan Seacrest Foundation.</p>
