@@ -12,6 +12,7 @@
       --text: #111111;
       --muted: #555555;
       --border: #e5e5e5;
+      --surface: #fafafa;
       --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     body {
@@ -76,6 +77,52 @@
     a:hover {
       color: var(--muted);
     }
+    .signup-box {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      padding: 16px;
+      margin-top: 12px;
+    }
+    .signup-box p {
+      margin: 0 0 8px 0;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .gallery-item {
+      border: 1px solid var(--border);
+      padding: 8px;
+      background-color: var(--surface);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 8px;
+      background-color: #eaeaea;
+    }
+    .gallery-caption {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.4;
+      margin: 0;
+    }
+    .social-icon-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      vertical-align: middle;
+    }
     .site-footer {
       border-top: 1px solid var(--border);
       padding-top: 24px;
@@ -85,7 +132,7 @@
     }
   </style>
 
-  <!-- Structured Data: ItemPage & MediaObject Schema -->
+  <!-- Structured Data: ItemPage and Person Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -120,23 +167,23 @@
 <body>
 
   <div class="container">
-   <header>
+    <header>
       <h1>Press and Media</h1>
       <p class="subtitle">Creating a brighter future through law and leadership. An essential resource for journalists, investors, and partners seeking approved executive bios, brand assets, booking protocols, and official news announcements.</p>
     </header>
 
-    <!-- Executive Bios -->
+    <!-- Executive Bios and Press Kit -->
     <section>
-      <h2>Executive Biography</h2>
+      <h2>Executive Biography and Press Kit</h2>
       <p><strong>Short Bio (49 words | 312 characters):</strong></p>
       <p>Avi Aiken Fernandez is an attorney, legal scholar, and author driving the conversation at the intersection of law, emerging technology, and public policy. The host of <em>Common Ground Policy with Avi</em> podcast and a sought-after CLE instructor on legal ethics, she holds degrees from Temple Law School and Spelman College.</p>
-      
-    <p style="margin-top: 20px;"><strong>Downloadable Electronic Press Kit:</strong></p>
+
+      <p style="margin-top: 20px;"><strong>Downloadable Electronic Press Kit:</strong></p>
       <p class="meta-line">Journalists and media professionals seeking a self-contained offline package can download synchronized high-resolution headshots and the PDF executive dossier below.</p>
-      <p><a href="INSERT FILE PATHWAY HERE">COMING SOON!</a></p>
+      <p><a href="INSERT_PRESS_KIT_ZIP_PATH">COMING SOON!</a></p>
     </section>
 
-<!-- Press Releases & Media Announcements -->
+    <!-- Announcements and Press Releases -->
     <section>
       <h2>Announcements and Press Releases</h2>
       <ul>
@@ -151,17 +198,17 @@
       </ul>
     </section>
 
-    <!-- Selected Works -->
+    <!-- Publications and Selected Works -->
     <section>
       <h2>Publications and Selected Works</h2>
       <ul>
         <li>
           <strong>The Retaker's Advantage: The 5-Step Blueprint for Passing the Bar on Your Next Attempt</strong><br>
-          <span class="meta-line">Field guide for new and repeat examinees for the Uniform Bar Examination (Barnes & Noble Press, 2026)</span>
+          <span class="meta-line">Field guide for new and repeat examinees for the Uniform Bar Examination (Barnes and Noble Press, 2026)</span>
         </li>
         <li>
           <strong>Teo's Truck / El camión de Teo</strong><br>
-          <span class="meta-line">Bilingual Spanish / English children's book (Bili Bilingual Books, 2026)</span>
+          <span class="meta-line">Bilingual Spanish and English children's book (Bili Bilingual Books, 2026)</span>
         </li>
         <li>
           <strong>Common Ground Policy with Avi</strong><br>
@@ -171,16 +218,25 @@
           <strong>The 3C’s of GenAI™ for Legal</strong><br>
           <span class="meta-line">Accredited Continuing Legal Education for ethics, legal technology, professionalism, and trial practice credit</span>
         </li>
+        <li>
+          <strong>Civic Memoir: On Legacy, Governance, and America 250 (Forthcoming)</strong><br>
+          <span class="meta-line">Civic memoir exploring classical philosophy, governance, and intergenerational family heritage</span>
+          <div class="signup-box">
+            <p class="meta-line">Join the release notification list for <em>Civic Memoir: On Legacy, Governance, and America 250</em> (managed through executive administration via Grant).</p>
+            <a href="INSERT_GOOGLE_FORM_URL" target="_blank" rel="noopener noreferrer">Request Release Updates via Google Form</a>
+          </div>
+        </li>
       </ul>
     </section>
 
-<!-- Contact Information -->
+    <!-- Media Inquiries and Brand Partnerships -->
     <section>
       <h2>Media Inquiries and Brand Partnerships</h2>
       <ul>
         <li>
           <strong>Media, Keynotes and Panels:</strong><br>
-          <span class="meta-line">Contact: J. Grant Harrington, II (Executive Assistant) — <a href="mailto:grant@example.com">jgrant.harrington@gmail.com</a></span>
+          <span class="meta-line">Contact: J. Grant Harrington, II (Executive Assistant) — <a href="mailto:jgrant.harrington@gmail.com">jgrant.harrington@gmail.com</a></span><br>
+          <span class="meta-line">Press Network: <a href="https://app.qwoted.com/sources/avi-aiken-fernandez" target="_blank" rel="noopener noreferrer">Qwoted Profile</a></span>
         </li>
         <li>
           <strong>Brand Partnerships:</strong><br>
@@ -189,39 +245,74 @@
       </ul>
     </section>
 
-    <!-- Social Media and Channels -->
+    <!-- Executive Milestone Wall and Official Channels -->
     <section>
-      <h2>Social Media and Channels</h2>
+      <h2>Executive Milestone Wall and Official Channels</h2>
+
+      <p><strong>Executive Milestone Wall:</strong></p>
+      <div class="gallery-grid">
+        <figure class="gallery-item" style="margin: 0;">
+          <img src="INSERT_PHOTO_1_DEAN_EPPS.jpg" alt="Dean JoAnne A. Epps at Temple University Beasley School of Law">
+          <figcaption class="gallery-caption">Dean JoAnne A. Epps and Temple Law milestone</figcaption>
+        </figure>
+        <figure class="gallery-item" style="margin: 0;">
+          <img src="INSERT_PHOTO_2_MAYOR_BLOOMBERG.jpg" alt="Former New York City Mayor Michael Bloomberg">
+          <figcaption class="gallery-caption">Mayor Michael Bloomberg and New York City civic leadership</figcaption>
+        </figure>
+        <figure class="gallery-item" style="margin: 0;">
+          <img src="INSERT_PHOTO_3_DA_CLARK.jpg" alt="Bronx County District Attorney Darcel D. Clark">
+          <figcaption class="gallery-caption">District Attorney Darcel D. Clark and Bronx prosecutorial service</figcaption>
+        </figure>
+        <figure class="gallery-item" style="margin: 0;">
+          <img src="INSERT_PHOTO_4_STATE_CAPITOL.jpg" alt="Legislative advocacy at the State Capitol">
+          <figcaption class="gallery-caption">State Capitol legislative and policy advocacy</figcaption>
+        </figure>
+        <figure class="gallery-item" style="margin: 0;">
+          <img src="INSERT_PHOTO_5_ACC.jpg" alt="Association of Corporate Counsel engagement">
+          <figcaption class="gallery-caption">Association of Corporate Counsel corporate governance engagement</figcaption>
+        </figure>
+        <figure class="gallery-item" style="margin: 0;">
+          <img src="INSERT_PHOTO_6_NY_HARBOR.jpg" alt="Executive portrait overlooking New York Harbor">
+          <figcaption class="gallery-caption">New York Harbor executive portrait</figcaption>
+        </figure>
+      </div>
+
       <ul>
         <li>
           <strong>Official Channels and Digital Assets:</strong><br>
           <span class="meta-line">🌐 Official Website: <a href="https://aviaikenfernandez.github.io" target="_blank" rel="noopener">aviaikenfernandez.github.io</a></span><br>
           <span class="meta-line">🎙️ Podcast and Substack: <em>Common Ground Policy with Avi</em></span><br>
+          <span class="meta-line">📰 Press Network: <a href="INSERT_QWOTED_PROFILE_URL" target="_blank" rel="noopener noreferrer">Qwoted</a></span><br>
           <span class="meta-line">
-  <a href="https://www.linkedin.com/in/aviesq" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon-link">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 1.45 1.45 1.45 1.45 0 0 0-1.45-1.45z"/></svg>
-    <span>LinkedIn</span>
-  </a> | 
-  <a href="https://www.facebook.com/AviAikenFernandez" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon-link">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.8c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.89h-2.34v6.99C18.34 21.12 22 16.99 22 12z"/></svg>
-    <span>Facebook</span>
-  </a> | 
-  <a href="https://x.com/aviesqX" target="_blank" rel="noopener" aria-label="X" class="social-icon-link">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-    <span>X</span>
-  </a> | 
-  <a href="https://www.youtube.com/@aviesq" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon-link">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-    <span>YouTube</span>
-  </a>
-</span>
+            <a href="https://www.linkedin.com/in/aviesq" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 1.45 1.45 1.45 1.45 0 0 0-1.45-1.45z"/></svg>
+              <span>LinkedIn</span>
+            </a> |
+            <a href="https://www.facebook.com/AviAikenFernandez" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.8c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.89h-2.34v6.99C18.34 21.12 22 16.99 22 12z"/></svg>
+              <span>Facebook</span>
+            </a> |
+            <a href="https://x.com/aviesqX" target="_blank" rel="noopener" aria-label="X" class="social-icon-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              <span>X</span>
+            </a> |
+            <a href="https://www.youtube.com/@aviesq" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <span>YouTube</span>
+            </a>
+          </span>
         </li>
+      </ul>
+    </section>
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer class="site-footer">
-      <div>© <span id="current-year">2026</span> Avi Aiken Fernandez. All rights reserved. &nbsp;|&nbsp; <a href="/">Return to Main Site</a></div>
+      <div>© <span id="current-year">2026</span> Avi Aiken Fernandez. All rights reserved.  |  <a href="/">Return to Main Site</a></div>
     </footer>
   </div>
 
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
