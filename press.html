@@ -22,6 +22,7 @@
       line-height: 1.6;
       margin: 0;
       padding: 40px 20px;
+      overflow-x: hidden;
     }
     .container {
       max-width: 720px;
@@ -90,31 +91,43 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
+      width: min(960px, calc(100vw - 40px));
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
       margin-top: 14px;
       margin-bottom: 24px;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 720px) {
       .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
+    @media (max-width: 500px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        position: static;
+        transform: none;
+      }
+    }
     .gallery-item {
       border: 1px solid var(--border);
-      padding: 8px;
+      padding: 10px;
       background-color: var(--surface);
     }
     .gallery-item img {
       width: 100%;
-      height: 140px;
+      height: 175px;
       object-fit: cover;
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       background-color: #eaeaea;
     }
     .gallery-caption {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: var(--muted);
-      line-height: 1.4;
+      line-height: 1.45;
       margin: 0;
     }
     .social-icon-link {
@@ -250,30 +263,30 @@
       <h2>Executive Milestone Wall and Official Channels</h2>
       <p><strong>Executive Milestone Wall:</strong></p>
       <div class="gallery-grid">
-  <figure class="gallery-item" style="margin: 0;">
-    <img src="Epps.jpg" alt="Provost Dean JoAnne A. Epps at Temple University Beasley School of Law" style="object-position: top center;">
-    <figcaption class="gallery-caption">Avi Aiken Fernandez with the late Provost and former Dean of Temple Law, JoAnne A. Epps</figcaption>
-  </figure>
-  <figure class="gallery-item" style="margin: 0;">
-    <img src="bloomberg.jpg" alt="Former New York City Mayor Michael Bloomberg" style="object-position: top center;">
-    <figcaption class="gallery-caption">Avi Aiken Fernandez with then Mayor Michael Bloomberg of New York</figcaption>
-  </figure>
-  <figure class="gallery-item" style="margin: 0;">
-    <img src="Darcel.jpg" alt="Bronx County District Attorney Darcel D. Clark" style="object-position: top center;">
-    <figcaption class="gallery-caption">Avi Aiken Fernandez with District Attorney Darcel D. Clark and fellow line assistants</figcaption>
-  </figure>
-  <figure class="gallery-item" style="margin: 0;">
-    <img src="Capitol.jpg" alt="Legislative advocacy at the U.S. Capitol" style="object-position: center 35%;">
-    <figcaption class="gallery-caption">Avi Aiken Fernandez at the U.S. Capitol during FBA Capitol Hill Day</figcaption>
-  </figure>
-  <figure class="gallery-item" style="margin: 0;">
-    <img src="ACC.jpg" alt="Association of Corporate Counsel engagement" style="object-position: center;">
-    <figcaption class="gallery-caption">Avi Aiken Fernandez at a mic during an Association of Corporate Counsel New York event</figcaption>
-  </figure>
-  <figure class="gallery-item" style="margin: 0;">
-    <img src="Boat.jpg" alt="Executive portrait overlooking the East River in New York" style="object-position: top center;">
-    <figcaption class="gallery-caption">A sunlight photo of Avi Aiken Fernandez on a boat in the East River, New York</figcaption>
-  </figure>
+        <figure class="gallery-item" style="margin: 0;">
+          <img src="Epps.jpg" alt="Provost Dean JoAnne A. Epps at Temple University Beasley School of Law" style="object-position: top center;">
+          <figcaption class="gallery-caption">Avi Aiken Fernandez with the late Provost and former Dean of Temple Law, JoAnne A. Epps</figcaption>
+        </figure>
+        <figure class="gallery-item" style="margin: 0;">
+          <img src="Bloomberg.jpg" alt="Former New York City Mayor Michael Bloomberg" style="object-position: top center;">
+          <figcaption class="gallery-caption">Avi Aiken Fernandez with then Mayor Michael Bloomberg of New York</figcaption>
+        </figure>
+        <figure class="gallery-item" style="margin: 0;">
+          <img src="Darcel.jpg" alt="Bronx County District Attorney Darcel D. Clark" style="object-position: top center;">
+          <figcaption class="gallery-caption">Avi Aiken Fernandez with District Attorney Darcel D. Clark and fellow line assistants</figcaption>
+        </figure>
+        <figure class="gallery-item" style="margin: 0;">
+          <img src="Capitol.jpg" alt="Legislative advocacy at the U.S. Capitol" style="object-position: center 35%;">
+          <figcaption class="gallery-caption">Avi Aiken Fernandez at the U.S. Capitol during FBA Capitol Hill Day</figcaption>
+        </figure>
+        <figure class="gallery-item" style="margin: 0;">
+          <img src="ACC.jpg" alt="Association of Corporate Counsel engagement" style="object-position: center;">
+          <figcaption class="gallery-caption">Avi Aiken Fernandez at a mic during an Association of Corporate Counsel New York event</figcaption>
+        </figure>
+        <figure class="gallery-item" style="margin: 0;">
+          <img src="Boat.jpg" alt="Executive portrait overlooking the East River in New York" style="object-position: top center;">
+          <figcaption class="gallery-caption">A sunlight photo of Avi Aiken Fernandez on a boat in the East River, New York</figcaption>
+        </figure>
       </div>
 
       <ul>
@@ -306,7 +319,7 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-      <div>© <span id="current-year">2026</span> Avi Aiken Fernandez. All rights reserved.  |  <a href="/">Return to Main Site</a></div>
+      <div>© <span id="current-year">2026</span> Avi Aiken Fernandez. All rights reserved.  |  <a href="/">Return to Main Site</a></div>
     </footer>
   </div>
 
